@@ -26,12 +26,8 @@ const Hero = () => {
             <span className="text-sm font-medium text-primary-foreground">부산 최고의 AI 교육 전문 기업</span>
           </div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-primary-foreground leading-tight">
-            인공지능 교육의
-            <br />
-            <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
-              새로운 기준
-            </span>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight">
+            생성형ai 교육의 선두주자
           </h1>
           
           <p className="text-xl md:text-2xl text-primary-foreground/90 mb-12 leading-relaxed max-w-3xl mx-auto">
