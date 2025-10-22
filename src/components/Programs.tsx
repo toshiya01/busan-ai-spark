@@ -4,6 +4,7 @@ import { Clock, BarChart, BookOpen } from "lucide-react";
 import aiEducationIcon from "@/assets/ai-education-icon.jpg";
 import dataScienceIcon from "@/assets/data-science-icon.jpg";
 import deepLearningIcon from "@/assets/deep-learning-icon.jpg";
+import contentCreationIcon from "@/assets/content-creation-icon.jpg";
 
 const programs = [
   {
@@ -29,6 +30,14 @@ const programs = [
     duration: "12주",
     level: "고급",
     topics: ["CNN & RNN", "자연어 처리", "컴퓨터 비전", "모델 최적화"],
+  },
+  {
+    icon: contentCreationIcon,
+    title: "생성형ai를 활용한 콘텐츠 제작",
+    description: "ai를 활용 한 이미지, 영상등을 실무 기반으로 배웁니다.",
+    duration: "6주",
+    level: "초급-중급",
+    topics: ["AI 이미지 생성", "AI 영상 제작", "프롬프트 엔지니어링", "실무 프로젝트"],
   },
 ];
 
