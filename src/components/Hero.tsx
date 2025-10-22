@@ -29,7 +29,7 @@ const Hero = () => {
           <p className="text-xl md:text-2xl text-primary-foreground/90 mb-12 leading-relaxed max-w-3xl mx-auto">
             머신러닝, 딥러닝, 데이터 사이언스까지.
             <br className="hidden md:block" />
-            실무 중심 커리큘럼으로 AI 전문가로 만들어 드립니다.
+            실무 중심 커리큘럼으로 여러분의 AI 전문가 여정을 시작하세요.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
