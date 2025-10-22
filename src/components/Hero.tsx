@@ -24,6 +24,9 @@ const Hero = () => {
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight" style={{
           color: "#ffffff"
         }}>chatGPT, 생성형ai 교육의 선두주자</h1>
+          
+          {/* 버전 확인용 - 2025-10-22 17:50 */}
+          <div className="text-xs text-primary-foreground/50 mt-2">v2025.10.22</div>
 
           <p className="text-xl md:text-2xl text-primary-foreground/90 mb-12 leading-relaxed max-w-3xl mx-auto">
             대학생, 직장인, 소상공인, 스타트업까지.
