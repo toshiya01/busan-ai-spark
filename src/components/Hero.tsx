@@ -33,7 +33,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-primary-foreground/90 mb-12 leading-relaxed max-w-3xl mx-auto">
-            머신러닝, 딥러닝, 데이터 사이언스까지.
+            대학생, 직장인, 소상공인, 스타트업까지.
             <br className="hidden md:block" />
             실무 중심 커리큘럼으로 여러분의 AI 전문가 여정을 시작하세요.
           </p>
