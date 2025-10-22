@@ -14,6 +14,8 @@ const Hero = () => {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}
+        role="img"
+        aria-label="부산 AI 교육 센터 배경 이미지"
       >
         <div className="absolute inset-0 gradient-hero"></div>
       </div>

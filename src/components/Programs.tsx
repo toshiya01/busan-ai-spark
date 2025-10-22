@@ -64,9 +64,11 @@ const Programs = () => {
                 <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
                   <img 
                     src={program.icon} 
-                    alt={program.title}
+                    alt={`${program.title} - 부산 AI 교육 프로그램, ${program.description}`}
                     className="w-full h-full object-cover"
                     loading="lazy"
+                    width="400"
+                    height="192"
                   />
                 </div>
                 <CardTitle className="text-2xl mb-2">{program.title}</CardTitle>
