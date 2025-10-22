@@ -49,7 +49,7 @@ const Hero = () => {
               variant="outline" 
               size="xl"
               className="bg-background/10 backdrop-blur-sm border-primary-foreground/20 text-primary-foreground hover:bg-background/20"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => window.open('https://www.google.com', '_blank')}
             >
               상담 신청하기
             </Button>
