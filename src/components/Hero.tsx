@@ -29,8 +29,8 @@ const Hero = () => {
           </div>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight" style={{ color: '#ffffff' }}>
-            부산 울산 경남
-            생성형ai 교육의 선두주자
+            부산 울산 경남<br>
+            생성형ai 교육의 선두주자</br>
           </h1>
           
           <p className="text-xl md:text-2xl text-primary-foreground/90 mb-12 leading-relaxed max-w-3xl mx-auto">
