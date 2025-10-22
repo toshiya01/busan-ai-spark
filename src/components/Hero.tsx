@@ -18,13 +18,13 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 backdrop-blur-sm border border-primary/20 mb-8 animate-fade-in">
             <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary-foreground">부산 최고의 AI 교육 전문 기업</span>
+            <span className="text-sm font-medium text-primary-foreground">부산 울산 경남 최고의 AI 교육 전문 기업</span>
           </div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight" style={{
           color: "#ffffff"
-        }}>부산 울산 경남
-생성형ai 교육의 선두주자</h1>
+        }}>chatGPT, 생성형ai
+교육의 선두주자</h1>
 
           <p className="text-xl md:text-2xl text-primary-foreground/90 mb-12 leading-relaxed max-w-3xl mx-auto">
             머신러닝, 딥러닝, 데이터 사이언스까지.
