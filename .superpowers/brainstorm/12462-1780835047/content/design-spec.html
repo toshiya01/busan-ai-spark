@@ -1,0 +1,68 @@
+<h2>FYNSEC 웹사이트 상세 설계안 (A안 기반)</h2>
+<p class="subtitle">선택하신 '영화 같은 SASE 포털 레이아웃(A안)'의 상세 설계 정보입니다. 각 항목을 보시고 피드백을 주세요.</p>
+
+<div class="cards">
+  <div class="card">
+    <div class="card-body">
+      <h3>1. 레이아웃 및 페이지 섹션 구성</h3>
+      <ul style="padding-left:20px;line-height:1.6">
+        <li><strong>Header:</strong> 상단 고정(Sticky) 유리막(Glassmorphism) 네비게이션바. 좌측 FYNSEC 로고, 중앙 메뉴(Services, Features, Pricing, About), 우측 'Book a Demo' 강조 버튼.</li>
+        <li><strong>Hero Section:</strong> 중앙에 무수히 많은 보안 노드와 보호막이 유기적으로 회전하는 3D Canvas 오리지널 보안 구체(Soft Protection Orb) 애니메이션. 그 위에 반투명 텍스트와 핵심 슬로건("Elevating Enterprise Security Through Soft Protection").</li>
+        <li><strong>Client Logos:</strong> 보안 신뢰도를 높여주는 글로벌 5대 기업 로고 슬라이더 (그레이 스케일 네온 호버 효과).</li>
+        <li><strong>SASE Interactive Diagram:</strong> Zero Trust, CASB, FWaaS, SWG 네 가지 모듈을 가진 대화형 다이어그램. 각 모듈 클릭 시 사용자와 클라우드 앱 사이의 패킷 이동 및 암호화 흐름이 네온 광원 링크로 시뮬레이션됨.</li>
+        <li><strong>Vulnerability Threat Dashboard:</strong> 실시간으로 취약점 스캔을 시뮬레이션하는 대시보드 카드. 실시간 위협 로그(로그 스크롤), 게이지 다이얼(보안 위험 지수), 실시간 위협 알림 토스트 팝업.</li>
+        <li><strong>Pricing & Service Builder:</strong> 사용자가 필요로 하는 사용자 수, 보안 기능 옵션(ZTNA, CASB 등)을 토글/슬라이더로 조절하여 예상 월 비용을 실시간으로 확인하는 계산기.</li>
+        <li><strong>Footer:</strong> 사이버 그리드가 배경으로 들어간 4열 레이아웃. 뉴스레터 구독 창과 SNS 링크 포함.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <div class="card-body">
+      <h3>2. 비주얼 테마 및 디자인 시스템</h3>
+      <table style="width:100%;border-collapse:collapse;margin-top:12px">
+        <tr style="border-bottom:1px solid #333">
+          <th style="text-align:left;padding:8px">요소</th>
+          <th style="text-align:left;padding:8px">사양</th>
+        </tr>
+        <tr>
+          <td style="padding:8px"><strong>배경색 (Background)</strong></td>
+          <td style="padding:8px">가장 깊은 차콜 블랙 (HSL 240, 10%, 3%) + 은은한 방사형 그라데이션</td>
+        </tr>
+        <tr>
+          <td style="padding:8px"><strong>메인 네온 (Primary Glow)</strong></td>
+          <td style="padding:8px">일렉트릭 사이안 (#00f0ff) 및 네온 블루 (#3b82f6)</td>
+        </tr>
+        <tr>
+          <td style="padding:8px"><strong>서브 네온 (Secondary Glow)</strong></td>
+          <td style="padding:8px">사이버 퍼플 (#a855f7) 및 소프트 에메랄드 (#10b981)</td>
+        </tr>
+        <tr>
+          <td style="padding:8px"><strong>타이포그래피 (Fonts)</strong></td>
+          <td style="padding:8px">Google Fonts의 Outfit(제목용, 세련된 느낌) 및 Inter(본문용, 높은 가독성)</td>
+        </tr>
+        <tr>
+          <td style="padding:8px"><strong>글래스모피즘 효과</strong></td>
+          <td style="padding:8px">semi-transparent dark background, thin border (rgba 255, 255, 255, 0.08), backdrop-filter (blur 12px)</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="options" style="margin-top:24px">
+  <div class="option" data-choice="approve" onclick="toggleSelect(this)">
+    <div class="letter">✓</div>
+    <div class="content">
+      <h3>설계안 승인 (Approve Design)</h3>
+      <p>상세 설계 및 사양이 마음에 듭니다. 이대로 스펙 문서를 작성하고 구현으로 넘어갑니다.</p>
+    </div>
+  </div>
+  <div class="option" data-choice="modify" onclick="toggleSelect(this)">
+    <div class="letter">✏️</div>
+    <div class="content">
+      <h3>수정 요청 (Request Modifications)</h3>
+      <p>일부 섹션의 구성이나 색상, 기능에 대해 변경하고 싶은 내용이 있습니다. (터미널에 의견 작성)</p>
+    </div>
+  </div>
+</div>

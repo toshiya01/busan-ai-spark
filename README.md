@@ -1,73 +1,45 @@
-# Welcome to your Lovable project
+import { BRAND_NAME, BRAND_NAME_KO, CONSULTATION_URL, SITE_URL } from "@/lib/site";
 
-## Project info
+const Footer = () => {
+  return (
+    <footer className="py-12 bg-muted/50 border-t border-border">
+      <div className="container px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <h3 className="text-xl font-bold mb-4 text-foreground">{BRAND_NAME_KO}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                부산·울산·경남을 기반으로 생성형 AI, ChatGPT, AI 이미지·영상, 바이브코딩 교육·컨설팅을 제공합니다.
+              </p>
+            </div>
 
-**URL**: https://lovable.dev/projects/71529278-06b8-4743-93ca-35963bdaea83
+            <div>
+              <h4 className="font-semibold mb-4 text-foreground">교육 프로그램</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href="#programs" className="hover:text-primary transition-smooth">ChatGPT 업무 자동화</a></li>
+                <li><a href="#programs" className="hover:text-primary transition-smooth">AI 데이터 분석 실무</a></li>
+                <li><a href="#programs" className="hover:text-primary transition-smooth">생성형 AI 콘텐츠 제작</a></li>
+                <li><a href="#programs" className="hover:text-primary transition-smooth">기업 맞춤 AI 워크숍</a></li>
+              </ul>
+            </div>
 
-## How can I edit this code?
+            <div>
+              <h4 className="font-semibold mb-4 text-foreground">문의하기</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>교육 지역: 부산 중심 · 울산·경남 협의</li>
+                <li><a href={CONSULTATION_URL} target="_blank" rel="noreferrer" className="hover:text-primary transition-smooth">상담 신청 폼 열기</a></li>
+                <li><a href={SITE_URL} className="hover:text-primary transition-smooth">starlab.ai.kr</a></li>
+              </ul>
+            </div>
+          </div>
 
-There are several ways of editing your application.
+          <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
+            <p>&copy; 2026 {BRAND_NAME}. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/71529278-06b8-4743-93ca-35963bdaea83) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/71529278-06b8-4743-93ca-35963bdaea83) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+export default Footer;

@@ -9,35 +9,35 @@ import contentCreationIcon from "@/assets/content-creation-icon.jpg";
 const programs = [
   {
     icon: aiEducationIcon,
-    title: "AI 머신러닝 기초",
-    description: "Python 기반의 머신러닝 핵심 개념과 알고리즘을 실습 중심으로 학습합니다.",
-    duration: "8주",
-    level: "초급-중급",
-    topics: ["Python 프로그래밍", "데이터 전처리", "지도/비지도 학습", "모델 평가"],
+    title: "ChatGPT 업무 자동화 입문",
+    description: "문서 작성, 회의록 정리, 이메일·제안서 초안 등 매일 반복되는 사무 업무를 AI와 함께 처리합니다.",
+    duration: "1일-4주",
+    level: "입문-실무",
+    topics: ["프롬프트 기본기", "업무별 템플릿", "문서·보고서 초안", "반복 업무 자동화"],
   },
   {
     icon: dataScienceIcon,
-    title: "데이터 사이언스",
-    description: "빅데이터 분석과 시각화 기술을 익혀 데이터 기반 의사결정 전문가가 됩니다.",
-    duration: "10주",
-    level: "중급",
-    topics: ["통계 분석", "데이터 시각화", "SQL & NoSQL", "비즈니스 인사이트"],
-  },
-  {
-    icon: deepLearningIcon,
-    title: "딥러닝 심화",
-    description: "TensorFlow와 PyTorch를 활용한 신경망 구축과 최신 딥러닝 모델을 마스터합니다.",
-    duration: "12주",
-    level: "고급",
-    topics: ["CNN & RNN", "자연어 처리", "컴퓨터 비전", "모델 최적화"],
+    title: "AI 데이터 분석 실무",
+    description: "엑셀, CSV, 설문 결과를 AI로 분석하고 의사결정에 필요한 인사이트와 리포트로 정리합니다.",
+    duration: "2-6주",
+    level: "초급-중급",
+    topics: ["데이터 정리", "AI 분석 질문법", "시각화 기획", "리포트 작성"],
   },
   {
     icon: contentCreationIcon,
-    title: "생성형ai를 활용한 콘텐츠 제작",
-    description: "ai를 활용 한 이미지, 영상등을 실무 기반으로 배웁니다.",
-    duration: "6주",
-    level: "초급-중급",
-    topics: ["AI 이미지 생성", "AI 영상 제작", "프롬프트 엔지니어링", "실무 프로젝트"],
+    title: "생성형 AI 콘텐츠 제작",
+    description: "블로그, SNS, 상세페이지, 이미지·영상 아이디어를 더 빠르게 기획하고 제작하는 과정을 실습합니다.",
+    duration: "1일-6주",
+    level: "입문-중급",
+    topics: ["콘텐츠 기획", "이미지 생성", "숏폼·영상 스토리보드", "브랜드 톤 프롬프트"],
+  },
+  {
+    icon: deepLearningIcon,
+    title: "기업 맞춤 AI 도입 워크숍",
+    description: "조직의 업무, 보안 기준, 교육 대상에 맞춰 AI 활용 가이드와 팀별 실습 과제를 설계합니다.",
+    duration: "협의",
+    level: "맞춤형",
+    topics: ["업무 진단", "팀별 활용 시나리오", "보안·저작권 기준", "사내 확산 가이드"],
   },
 ];
 
@@ -47,24 +47,21 @@ const Programs = () => {
       <div className="container px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            맞춤형 <span className="text-primary">AI 교육 프로그램</span>
+            목표별 <span className="text-primary">AI 교육 프로그램</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            초보자부터 전문가까지, 수준별 맞춤 커리큘럼으로 체계적인 학습이 가능합니다.
+            하루 특강부터 팀 맞춤 워크숍까지, 부산·울산·경남 현장에서 바로 적용 가능한 커리큘럼으로 구성합니다.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {programs.map((program, index) => (
-            <Card 
-              key={index}
-              className="shadow-soft hover:shadow-glow transition-smooth border-border/50"
-            >
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          {programs.map((program) => (
+            <Card key={program.title} className="shadow-soft hover:shadow-glow transition-smooth border-border/50">
               <CardHeader>
                 <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
-                  <img 
-                    src={program.icon} 
-                    alt={`${program.title} - 부산 AI 교육 프로그램, ${program.description}`}
+                  <img
+                    src={program.icon}
+                    alt={`${program.title} - 부산 생성형 AI 교육 프로그램`}
                     className="w-full h-full object-cover"
                     loading="lazy"
                     width="400"
@@ -93,21 +90,21 @@ const Programs = () => {
                       <span>주요 학습 내용</span>
                     </div>
                     <ul className="space-y-1 text-sm text-muted-foreground">
-                      {program.topics.map((topic, idx) => (
-                        <li key={idx} className="flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                      {program.topics.map((topic) => (
+                        <li key={topic} className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                           {topic}
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <Button 
-                    className="w-full mt-4" 
+                  <Button
+                    className="w-full mt-4"
                     variant="default"
-                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                    onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                   >
-                    자세히 알아보기
+                    상담으로 과정 설계하기
                   </Button>
                 </div>
               </CardContent>

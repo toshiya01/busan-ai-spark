@@ -1,31 +1,28 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, MessageCircle, MonitorPlay, Clock } from "lucide-react";
+import { CONSULTATION_URL } from "@/lib/site";
 
 const contactInfo = [
   {
     icon: MapPin,
-    title: "위치",
-    content: "부산광역시 해운대구 센텀중앙로 78",
-    link: "https://maps.google.com",
+    title: "교육 지역",
+    content: "부산 중심 · 울산·경남 협의 가능",
   },
   {
-    icon: Phone,
-    title: "전화",
-    content: "051-1234-5678",
-    link: "tel:051-1234-5678",
+    icon: MonitorPlay,
+    title: "교육 방식",
+    content: "오프라인 워크숍 · 온라인 코칭 · 기업 출강",
   },
   {
-    icon: Mail,
-    title: "이메일",
-    content: "info@busanai.academy",
-    link: "mailto:info@busanai.academy",
+    icon: MessageCircle,
+    title: "상담 접수",
+    content: "교육 대상, 인원, 목표를 남겨주시면 과정 구성을 제안합니다.",
   },
   {
     icon: Clock,
-    title: "운영시간",
-    content: "평일 09:00 - 18:00",
-    link: null,
+    title: "운영 시간",
+    content: "상담 폼 접수 후 순차 회신",
   },
 ];
 
@@ -35,34 +32,24 @@ const Contact = () => {
       <div className="container px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            <span className="text-primary">지금 바로</span> 시작하세요
+            <span className="text-primary">우리 조직에 맞는</span> AI 교육을 설계하세요
           </h2>
           <p className="text-lg text-muted-foreground">
-            AI 전문가로의 여정, 부산 AI 아카데미와 함께하세요.
-            무료 상담을 통해 여러분에게 맞는 최적의 교육 과정을 안내해드립니다.
+            교육 대상, 인원, 현재 업무 고민을 알려주시면 ChatGPT·생성형 AI를 어떻게 적용할지 과정 방향을 함께 정리합니다.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
-          {contactInfo.map((info, index) => {
+          {contactInfo.map((info) => {
             const Icon = info.icon;
             return (
-              <Card key={index} className="shadow-soft hover:shadow-glow transition-smooth">
+              <Card key={info.title} className="shadow-soft hover:shadow-glow transition-smooth">
                 <CardContent className="p-6 text-center">
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full gradient-primary mb-4">
                     <Icon className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <h3 className="font-semibold text-foreground mb-2">{info.title}</h3>
-                  {info.link ? (
-                    <a 
-                      href={info.link}
-                      className="text-sm text-muted-foreground hover:text-primary transition-smooth"
-                    >
-                      {info.content}
-                    </a>
-                  ) : (
-                    <p className="text-sm text-muted-foreground">{info.content}</p>
-                  )}
+                  <p className="text-sm text-muted-foreground leading-relaxed">{info.content}</p>
                 </CardContent>
               </Card>
             );
@@ -70,17 +57,14 @@ const Contact = () => {
         </div>
 
         <div className="max-w-xl mx-auto text-center">
-          <Button 
-            variant="hero" 
-            size="xl"
-            onClick={() => window.location.href = 'tel:051-1234-5678'}
-            className="w-full sm:w-auto"
-          >
-            <Phone className="w-5 h-5" />
-            무료 상담 신청하기
+          <Button asChild variant="hero" size="xl" className="w-full sm:w-auto">
+            <a href={CONSULTATION_URL} target="_blank" rel="noreferrer">
+              <MessageCircle className="w-5 h-5" />
+              무료 상담 신청하기
+            </a>
           </Button>
           <p className="mt-4 text-sm text-muted-foreground">
-            상담 가능 시간: 평일 09:00 - 18:00
+            상담 폼에서 교육 목적과 희망 일정을 남겨주세요.
           </p>
         </div>
       </div>

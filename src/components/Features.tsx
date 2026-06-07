@@ -1,25 +1,25 @@
-import { Laptop, Users2, Award, HeadphonesIcon } from "lucide-react";
+import { Laptop, Users2, ShieldCheck, ClipboardCheck } from "lucide-react";
 
 const features = [
   {
     icon: Laptop,
-    title: "실무 중심 프로젝트",
-    description: "이론보다 실습! 실제 기업 프로젝트를 수행하며 포트폴리오를 완성합니다.",
+    title: "업무 산출물 중심 실습",
+    description: "수업 중에 보고서, 홍보 문안, 데이터 분석 리포트처럼 실제로 제출하거나 활용할 결과물을 직접 만듭니다.",
   },
   {
     icon: Users2,
-    title: "소규모 정예 수업",
-    description: "최대 15명 소규모 클래스로 1:1 멘토링과 개인 맞춤 피드백을 제공합니다.",
+    title: "대상별 맞춤 커리큘럼",
+    description: "대학생, 소상공인, 기업 실무자의 목표가 다르기 때문에 예제와 과제를 교육 대상에 맞춰 조정합니다.",
   },
   {
-    icon: Award,
-    title: "취업 연계 프로그램",
-    description: "50개 이상의 제휴 기업과 함께하는 취업 연계 및 경력 개발 지원.",
+    icon: ShieldCheck,
+    title: "보안·저작권 기준 포함",
+    description: "업무 데이터를 AI에 입력할 때의 주의점, 저작권·출처 표기, 사내 활용 가이드까지 함께 다룹니다.",
   },
   {
-    icon: HeadphonesIcon,
-    title: "평생 학습 지원",
-    description: "수료 후에도 지속적인 커리큘럼 업데이트와 커뮤니티 지원을 받을 수 있습니다.",
+    icon: ClipboardCheck,
+    title: "교육 후 적용 체크리스트",
+    description: "수강 후 바로 다시 사용할 수 있는 프롬프트 템플릿, 업무 적용 체크리스트, 다음 단계 학습 방향을 정리합니다.",
   },
 ];
 
@@ -29,31 +29,24 @@ const Features = () => {
       <div className="container px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            왜 <span className="text-primary">우리를 선택</span>해야 할까요?
+            강의가 아니라 <span className="text-primary">업무 적용 훈련</span>입니다
           </h2>
           <p className="text-lg text-muted-foreground">
-            차별화된 교육 시스템과 체계적인 커리어 지원으로 여러분의 성공을 보장합니다.
+            AI 도구 사용법을 나열하지 않고, 현장에서 반복되는 문제를 AI로 해결하는 순서를 함께 만듭니다.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {features.map((feature, index) => {
+          {features.map((feature) => {
             const Icon = feature.icon;
             return (
-              <div 
-                key={index}
-                className="p-8 rounded-xl bg-card shadow-soft hover:shadow-glow transition-smooth"
-              >
+              <article key={feature.title} className="p-8 rounded-xl bg-card shadow-soft hover:shadow-glow transition-smooth">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl gradient-secondary mb-6">
                   <Icon className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-foreground">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
+                <h3 className="text-2xl font-bold mb-4 text-foreground">{feature.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+              </article>
             );
           })}
         </div>

@@ -1,10 +1,26 @@
-import { Target, Users, Award, TrendingUp } from "lucide-react";
+import { BriefcaseBusiness, Building2, GraduationCap, Store } from "lucide-react";
 
-const stats = [
-  { icon: Users, value: "1,000+", label: "교육 수료생" },
-  { icon: Award, value: "95%", label: "취업 성공률" },
-  { icon: Target, value: "50+", label: "기업 제휴" },
-  { icon: TrendingUp, value: "4.9/5", label: "교육 만족도" },
+const audiences = [
+  {
+    icon: Building2,
+    title: "기업·기관 교육",
+    description: "문서 작성, 회의록, 보고서, 고객 응대처럼 실제 업무 흐름에 맞춘 AI 활용 규칙과 실습을 설계합니다.",
+  },
+  {
+    icon: Store,
+    title: "소상공인·자영업자",
+    description: "홍보 문구, 블로그·SNS 콘텐츠, 상세페이지 기획, 고객 안내문을 빠르게 만드는 실전 템플릿을 제공합니다.",
+  },
+  {
+    icon: GraduationCap,
+    title: "대학생·취업 준비생",
+    description: "리서치, 포트폴리오, 자기소개서 초안, 데이터 분석 과제를 AI와 함께 완성하는 방법을 익힙니다.",
+  },
+  {
+    icon: BriefcaseBusiness,
+    title: "스타트업·실무팀",
+    description: "반복 업무 자동화, 아이디어 검증, 제안서·IR 자료 초안 작성 등 팀 생산성을 높이는 워크플로우를 만듭니다.",
+  },
 ];
 
 const About = () => {
@@ -13,35 +29,30 @@ const About = () => {
       <div className="container px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            부산에서 시작하는
+            AI를 배우는 목적은
             <br />
-            <span className="text-primary">AI 전문가의 꿈</span>
+            <span className="text-primary">업무 결과를 바꾸는 것</span>입니다
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            우리는 단순히 이론을 가르치는 것이 아닙니다.
-            실제 현장에서 바로 적용 가능한 실무 중심 교육으로
-            여러분을 AI 전문가로 성장시킵니다.
+            Busan AI Spark는 부산·울산·경남 현장에서 필요한 생성형 AI 활용법을 대상별 과제와 함께 가르칩니다.
+            수강생은 수업 안에서 본인 업무에 맞는 프롬프트, 자동화 흐름, 콘텐츠 결과물을 직접 만들어 봅니다.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-          {stats.map((stat, index) => {
-            const Icon = stat.icon;
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          {audiences.map((audience) => {
+            const Icon = audience.icon;
             return (
-              <div 
-                key={index}
-                className="text-center p-6 rounded-xl bg-card shadow-soft hover:shadow-glow transition-smooth"
+              <article
+                key={audience.title}
+                className="p-6 rounded-xl bg-card shadow-soft hover:shadow-glow transition-smooth"
               >
                 <div className="inline-flex items-center justify-center w-14 h-14 rounded-full gradient-primary mb-4">
                   <Icon className="w-7 h-7 text-primary-foreground" />
                 </div>
-                <div className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  {stat.label}
-                </div>
-              </div>
+                <h3 className="text-xl font-bold text-foreground mb-3">{audience.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{audience.description}</p>
+              </article>
             );
           })}
         </div>

@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 const About = lazy(() => import("@/components/About"));
 const Programs = lazy(() => import("@/components/Programs"));
 const Features = lazy(() => import("@/components/Features"));
+const Faq = lazy(() => import("@/components/Faq"));
 const Contact = lazy(() => import("@/components/Contact"));
 const Footer = lazy(() => import("@/components/Footer"));
 
@@ -15,6 +16,7 @@ const Index = () => {
         <About />
         <Programs />
         <Features />
+        <Faq />
         <Contact />
         <Footer />
       </Suspense>
