@@ -2,87 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 15% 20%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 220 15% 20%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 20%;
-
-    --primary: 193 95% 35%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 193 95% 55%;
-
-    --secondary: 263 70% 50%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 210 20% 96%;
-    --muted-foreground: 220 15% 45%;
-
-    --accent: 193 95% 45%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 193 95% 35%;
-
-    --radius: 0.75rem;
-
-    /* Custom design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(193 95% 35%), hsl(193 95% 55%));
-    --gradient-secondary: linear-gradient(135deg, hsl(193 95% 45%), hsl(263 70% 50%));
-    --gradient-hero: linear-gradient(135deg, hsl(193 95% 35% / 0.95), hsl(263 70% 50% / 0.95));
-    
-    --shadow-soft: 0 10px 40px -10px hsl(193 95% 35% / 0.15);
-    --shadow-glow: 0 0 60px hsl(193 95% 55% / 0.3);
-    
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-
-  .dark {
-    --background: 220 25% 8%;
+    --background: 240 15% 3%;
     --foreground: 210 40% 98%;
 
-    --card: 220 20% 12%;
+    --card: 240 10% 6%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 220 20% 12%;
+    --popover: 240 10% 6%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 193 95% 45%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 193 95% 65%;
+    --primary: 193 100% 50%;
+    --primary-foreground: 240 15% 3%;
+    --primary-glow: 193 100% 65%;
 
-    --secondary: 263 70% 55%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 271 91% 65%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 220 20% 15%;
+    --muted: 240 10% 12%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 193 95% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 193 100% 50%;
+    --accent-foreground: 240 15% 3%;
 
-    --destructive: 0 62.8% 50%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 343 90% 60%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 220 20% 18%;
-    --input: 220 20% 18%;
-    --ring: 193 95% 45%;
+    --border: 240 10% 12%;
+    --input: 240 10% 12%;
+    --ring: 193 100% 50%;
 
-    --shadow-soft: 0 10px 40px -10px hsl(193 95% 45% / 0.3);
-    --shadow-glow: 0 0 60px hsl(193 95% 65% / 0.4);
+    --radius: 1rem;
   }
 }
 
@@ -90,43 +41,41 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-
   body {
-    @apply bg-background text-foreground;
-    scroll-behavior: smooth;
-  }
-
-  html {
-    scroll-behavior: smooth;
+    @apply bg-[#050508] text-foreground antialiased selection:bg-[#00f0ff]/30 selection:text-white;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
   }
 }
 
 @layer utilities {
-  .gradient-primary {
-    background: var(--gradient-primary);
+  .glass-card {
+    background: rgba(14, 14, 18, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
+  .neon-glow-cyan {
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
+  }
+  .neon-glow-purple {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+  }
+  .text-glow-cyan {
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+  }
+  .cyber-grid {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  }
+  .animate-marquee {
+    animation: marquee 25s linear infinite;
+  }
+}
 
-  .gradient-secondary {
-    background: var(--gradient-secondary);
-  }
-
-  .gradient-hero {
-    background: var(--gradient-hero);
-  }
-
-  .shadow-soft {
-    box-shadow: var(--shadow-soft);
-  }
-
-  .shadow-glow {
-    box-shadow: var(--shadow-glow);
-  }
-
-  .transition-smooth {
-    transition: var(--transition-smooth);
-  }
-
-  .transition-bounce {
-    transition: var(--transition-bounce);
-  }
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
