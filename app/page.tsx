@@ -148,7 +148,7 @@ export default function Page() {
             <details key={q}>
               <summary>
                 {q}
-                <svg className="chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg className="chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
               </summary>
