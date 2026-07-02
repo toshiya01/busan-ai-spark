@@ -23,3 +23,15 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+
+# Next.js
+.next/
+out/
+build/
+
+# TS build info
+*.tsbuildinfo
+
+# Tooling/temporary files
+.gstack/
+tmp_zip_contents/
