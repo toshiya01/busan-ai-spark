@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: '스타랩',
     locale: 'ko_KR',
-    type: 'website'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: '스타랩 교육 행사 대행'
+      }
+    ]
   }
 };
 
