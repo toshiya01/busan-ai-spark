@@ -32,5 +32,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./out/
-          server-dir: /starlab.ai.kr/
+          server-dir: /ai.starlab.co.kr/
           dangerous-clean-slate: true

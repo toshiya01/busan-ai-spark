@@ -1,45 +1,25 @@
-import { BRAND_NAME, BRAND_NAME_KO, CONSULTATION_URL, SITE_URL } from "@/lib/site";
+# 스타랩 공공기관 교육 행사 운영 대행 랜딩
 
-const Footer = () => {
-  return (
-    <footer className="py-12 bg-muted/50 border-t border-border">
-      <div className="container px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4 text-foreground">{BRAND_NAME_KO}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                부산·울산·경남을 기반으로 생성형 AI, ChatGPT, AI 이미지·영상, 바이브코딩 교육·컨설팅을 제공합니다.
-              </p>
-            </div>
+Next.js App Router 기반 정적 SEO 랜딩입니다.
 
-            <div>
-              <h4 className="font-semibold mb-4 text-foreground">교육 프로그램</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#programs" className="hover:text-primary transition-smooth">ChatGPT 업무 자동화</a></li>
-                <li><a href="#programs" className="hover:text-primary transition-smooth">AI 데이터 분석 실무</a></li>
-                <li><a href="#programs" className="hover:text-primary transition-smooth">생성형 AI 콘텐츠 제작</a></li>
-                <li><a href="#programs" className="hover:text-primary transition-smooth">기업 맞춤 AI 워크숍</a></li>
-              </ul>
-            </div>
+## 실행
 
-            <div>
-              <h4 className="font-semibold mb-4 text-foreground">문의하기</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>교육 지역: 부산 중심 · 울산·경남 협의</li>
-                <li><a href={CONSULTATION_URL} target="_blank" rel="noreferrer" className="hover:text-primary transition-smooth">상담 신청 폼 열기</a></li>
-                <li><a href={SITE_URL} className="hover:text-primary transition-smooth">starlab.ai.kr</a></li>
-              </ul>
-            </div>
-          </div>
+```bash
+npm install
+npm run dev
+```
 
-          <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-            <p>&copy; 2026 {BRAND_NAME}. All rights reserved.</p>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-};
+## 수정 포인트
 
-export default Footer;
+- 도메인: `app/layout.tsx`, `app/robots.ts`, `app/sitemap.ts`에 `https://ai.starlab.co.kr`이 적용되었습니다.
+- 문의 폼 백엔드: `app/page.tsx`의 `<form className="form">`
+- 메인 키워드: `부산 울산 경남 교육 행사 프로그램 운영 관리 대행`
+
+## SEO 포함
+
+- title / description / keywords
+- canonical
+- Open Graph (og:image 포함)
+- robots.ts
+- sitemap.ts
+- LocalBusiness / Service / FAQPage JSON-LD
