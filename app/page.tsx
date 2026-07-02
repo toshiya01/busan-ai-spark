@@ -1,3 +1,7 @@
+'use client';
+
+import {useState} from 'react';
+
 const services = [
   ['01', '프로그램 기획', '기관 목적과 예산에 맞춰 교육 주제, 일정, 운영안을 정리합니다.'],
   ['02', '참가자 모집 관리', '신청 폼, 명단, 안내 문자, 출결 확인까지 운영합니다.'],
@@ -21,7 +25,13 @@ const jsonLd = {
       name: '스타랩',
       areaServed: ['부산', '울산', '경남'],
       description: '공공기관 교육 행사 프로그램 운영 관리 대행',
-      url: 'https://ai.starlab.co.kr'
+      url: 'https://ai.starlab.co.kr',
+      telephone: '051-000-0000',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: '부산광역시',
+        addressCountry: 'KR'
+      }
     },
     {
       '@type': 'Service',
@@ -38,16 +48,31 @@ const jsonLd = {
 };
 
 export default function Page() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}} />
+      
       <header className="nav">
         <a className="brand" href="#top" aria-label="스타랩 홈">StarLab</a>
-        <nav aria-label="주요 메뉴">
-          <a href="#service">서비스</a>
-          <a href="#process">프로세스</a>
-          <a href="#faq">FAQ</a>
-          <a className="navCta" href="#contact">상담 문의</a>
+        
+        <button 
+          className="menuToggle" 
+          onClick={() => setMenuOpen(!menuOpen)} 
+          aria-expanded={menuOpen}
+          aria-label="메뉴 열기/닫기"
+        >
+          <span className={`bar ${menuOpen ? 'active' : ''}`}></span>
+          <span className={`bar ${menuOpen ? 'active' : ''}`}></span>
+          <span className={`bar ${menuOpen ? 'active' : ''}`}></span>
+        </button>
+
+        <nav className={`navLinks ${menuOpen ? 'open' : ''}`} aria-label="주요 메뉴">
+          <a href="#service" onClick={() => setMenuOpen(false)}>서비스</a>
+          <a href="#process" onClick={() => setMenuOpen(false)}>프로세스</a>
+          <a href="#faq" onClick={() => setMenuOpen(false)}>FAQ</a>
+          <a className="navCta" href="#contact" onClick={() => setMenuOpen(false)}>상담 문의</a>
         </nav>
       </header>
 
@@ -119,7 +144,17 @@ export default function Page() {
           <h2>자주 묻는 질문</h2>
         </div>
         <div className="faq">
-          {faqs.map(([q, a]) => <details key={q}><summary>{q}</summary><p>{a}</p></details>)}
+          {faqs.map(([q, a]) => (
+            <details key={q}>
+              <summary>
+                {q}
+                <svg className="chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </summary>
+              <p>{a}</p>
+            </details>
+          ))}
         </div>
       </section>
 
