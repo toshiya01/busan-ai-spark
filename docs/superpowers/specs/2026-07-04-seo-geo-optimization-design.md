@@ -11,7 +11,7 @@
 We will configure the `Metadata` object in `app/layout.tsx` using Next.js core API features:
 
 ### A. Verification Tags
-- **Google Search Console**: `google-site-verification=k8moRGKM1lKVSAjLxECcDYjVaFK_TKEMV2HfLe9iNyk`
+- **Google Search Console**: `google-site-verification=xP2fftReHXCcI_l8uptXIg6a27MBJCPvvvgZ8-eVqJU`
 - **Naver Search Advisor**: `naver-site-verification=8d134f95402574e76b77d4038f041c7cbbf0d756`
 
 ### B. Geo-Targeting Metadata
