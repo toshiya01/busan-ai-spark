@@ -1,10 +1,15 @@
 import fs from 'fs';
 
+if (!fs.existsSync('app/layout.tsx') || !fs.existsSync('app/page.tsx')) {
+  console.error('Error: Please run this script from the project root directory.');
+  process.exit(1);
+}
+
 console.log('Starting SEO & Geo configuration validation...');
 
 // 1. Verify app/layout.tsx changes
 const layoutContent = fs.readFileSync('app/layout.tsx', 'utf8');
-if (!layoutContent.includes('google-site-verification=k8moRGKM1lKVSAjLxECcDYjVaFK_TKEMV2HfLe9iNyk')) {
+if (!layoutContent.includes("google: 'k8moRGKM1lKVSAjLxECcDYjVaFK_TKEMV2HfLe9iNyk'")) {
   throw new Error('Google site verification missing or incorrect in app/layout.tsx!');
 }
 if (!layoutContent.includes('8d134f95402574e76b77d4038f041c7cbbf0d756')) {
