@@ -1,60 +1,14 @@
-name: Deploy to FastComet
+name: Vercel Deployment Notice
 
 on:
-  push:
-    branches:
-      - main
-      - master
+  workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  deployment-notice:
     runs-on: ubuntu-latest
-    
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
-      
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps
-      
-      - name: Build project
-        run: npm run build
-      
-      - name: Install SFTP client
+      - name: Explain deployment owner
         run: |
-          sudo apt-get update
-          sudo apt-get install -y lftp
-
-      - name: Deploy to FastComet via SFTP
-        env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-          FTP_PORT: ${{ secrets.FTP_PORT }}
-        run: |
-          set -euo pipefail
-          if [ -n "${FTP_PORT:-}" ]; then
-            ports="$FTP_PORT"
-          else
-            ports="22 17177"
-          fi
-
-          for sftp_port in $ports; do
-            echo "Trying SFTP deployment on port $sftp_port"
-            if lftp \
-              --env-password \
-              -p "$sftp_port" \
-              -u "$FTP_USERNAME" \
-              "sftp://$FTP_SERVER" \
-              -e "set cmd:fail-exit yes; set net:timeout 20; set net:max-retries 1; set sftp:auto-confirm yes; mirror --reverse --delete --verbose ./out/ /starlab.ai.kr/; bye"; then
-              exit 0
-            fi
-          done
-
-          echo "SFTP deployment failed on all configured ports"
-          exit 1
+          echo "Production deploys are handled by the Vercel Git integration."
+          echo "Pushing to main creates a Vercel deployment for ai.starlab.co.kr."
