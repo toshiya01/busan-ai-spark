@@ -21,7 +21,19 @@ export const metadata: Metadata = {
   title: '부산 울산 경남 교육 행사 프로그램 운영 관리 대행｜스타랩',
   description: '공공기관·지자체·교육기관 대상 교육 행사, 프로그램 기획, 참가자 모집 관리, 현장 운영, 결과보고까지 부산 울산 경남에서 대행합니다.',
   keywords: ['부산 교육 행사 대행', '울산 프로그램 운영 대행', '경남 공공기관 행사 운영', '교육 프로그램 운영 관리 대행', '공공기관 행사 대행'],
-  alternates: {canonical: '/'},
+  alternates: { canonical: '/' },
+  verification: {
+    google: 'k8moRGKM1lKVSAjLxECcDYjVaFK_TKEMV2HfLe9iNyk',
+    other: {
+      'naver-site-verification': '8d134f95402574e76b77d4038f041c7cbbf0d756',
+    },
+  },
+  other: {
+    'geo.region': 'KR-26',
+    'geo.placename': 'Busan',
+    'geo.position': '35.1561;129.0594',
+    'ICBM': '35.1561, 129.0594',
+  },
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
