@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   keywords: ['부산 교육 행사 대행', '울산 프로그램 운영 대행', '경남 공공기관 행사 운영', '교육 프로그램 운영 관리 대행', '공공기관 행사 대행'],
   alternates: { canonical: '/' },
   verification: {
-    google: 'k8moRGKM1lKVSAjLxECcDYjVaFK_TKEMV2HfLe9iNyk',
+    google: 'xP2fftReHXCcI_l8uptXIg6a27MBJCPvvvgZ8-eVqJU',
     other: {
       'naver-site-verification': '8d134f95402574e76b77d4038f041c7cbbf0d756',
     },

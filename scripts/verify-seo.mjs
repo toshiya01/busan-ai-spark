@@ -9,7 +9,7 @@ console.log('Starting SEO & Geo configuration validation...');
 
 // 1. Verify app/layout.tsx changes
 const layoutContent = fs.readFileSync('app/layout.tsx', 'utf8');
-if (!layoutContent.includes("google: 'k8moRGKM1lKVSAjLxECcDYjVaFK_TKEMV2HfLe9iNyk'")) {
+if (!layoutContent.includes("google: 'xP2fftReHXCcI_l8uptXIg6a27MBJCPvvvgZ8-eVqJU'")) {
   throw new Error('Google site verification missing or incorrect in app/layout.tsx!');
 }
 if (!layoutContent.includes('8d134f95402574e76b77d4038f041c7cbbf0d756')) {
