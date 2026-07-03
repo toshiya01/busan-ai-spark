@@ -38,10 +38,23 @@ jobs:
           FTP_PORT: ${{ secrets.FTP_PORT }}
         run: |
           set -euo pipefail
-          sftp_port="${FTP_PORT:-22}"
-          lftp \
-            --env-password \
-            -p "$sftp_port" \
-            -u "$FTP_USERNAME" \
-            "sftp://$FTP_SERVER" \
-            -e "set cmd:fail-exit yes; set net:timeout 30; set net:max-retries 2; set sftp:auto-confirm yes; mirror --reverse --delete --verbose ./out/ /starlab.ai.kr/; bye"
+          if [ -n "${FTP_PORT:-}" ]; then
+            ports="$FTP_PORT"
+          else
+            ports="22 17177"
+          fi
+
+          for sftp_port in $ports; do
+            echo "Trying SFTP deployment on port $sftp_port"
+            if lftp \
+              --env-password \
+              -p "$sftp_port" \
+              -u "$FTP_USERNAME" \
+              "sftp://$FTP_SERVER" \
+              -e "set cmd:fail-exit yes; set net:timeout 20; set net:max-retries 1; set sftp:auto-confirm yes; mirror --reverse --delete --verbose ./out/ /starlab.ai.kr/; bye"; then
+              exit 0
+            fi
+          done
+
+          echo "SFTP deployment failed on all configured ports"
+          exit 1
