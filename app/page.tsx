@@ -25,26 +25,57 @@ const jsonLd = {
     {
       '@type': 'LocalBusiness',
       name: '스타랩',
-      areaServed: ['부산', '울산', '경남'],
       description: '공공기관 교육 행사 프로그램 운영 관리 대행',
       url: 'https://ai.starlab.co.kr',
-      telephone: '051-000-0000',
+      telephone: '0507-1301-9327',
+      image: ['https://ai.starlab.co.kr/og-image.jpg'],
+      logo: 'https://ai.starlab.co.kr/og-image.jpg',
+      priceRange: '₩₩',
+      openingHoursSpecification: {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: [
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday'
+        ],
+        opens: '09:00',
+        closes: '18:00'
+      },
       address: {
         '@type': 'PostalAddress',
-        addressLocality: '부산광역시',
+        streetAddress: '서전로 3',
+        addressLocality: '부산진구',
+        addressRegion: '부산광역시',
+        postalCode: '47293',
         addressCountry: 'KR'
-      }
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 35.1561,
+        longitude: 129.0594
+      },
+      areaServed: [
+        { '@type': 'AdministrativeArea', 'name': '부산광역시' },
+        { '@type': 'AdministrativeArea', 'name': '울산광역시' },
+        { '@type': 'AdministrativeArea', 'name': '경상남도' }
+      ]
     },
     {
       '@type': 'Service',
       name: '부산 울산 경남 교육 행사 프로그램 운영 관리 대행',
-      provider: {'@type': 'LocalBusiness', name: '스타랩'},
-      areaServed: ['부산', '울산', '경남'],
+      provider: { '@type': 'LocalBusiness', name: '스타랩' },
+      areaServed: [
+        { '@type': 'AdministrativeArea', 'name': '부산광역시' },
+        { '@type': 'AdministrativeArea', 'name': '울산광역시' },
+        { '@type': 'AdministrativeArea', 'name': '경상남도' }
+      ],
       serviceType: '공공기관 행사 운영 대행'
     },
     {
       '@type': 'FAQPage',
-      mainEntity: faqs.map(([q, a]) => ({'@type': 'Question', name: q, acceptedAnswer: {'@type': 'Answer', text: a}}))
+      mainEntity: faqs.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } }))
     }
   ]
 };
@@ -247,6 +278,11 @@ export default function Page() {
             />
           </div>
           <p className="formHint">받는 사람: {inquiryEmail}</p>
+          <address style={{ display: 'block', fontStyle: 'normal', fontSize: '0.85rem', color: '#888', marginTop: '1rem', marginBottom: '1.5rem', lineHeight: '1.6' }}>
+            <div><strong>스타랩 (StarLab)</strong></div>
+            <div>주소: 부산광역시 부산진구 서전로 3 (우편번호 47293)</div>
+            <div>문의: 0507-1301-9327 | 이메일: {inquiryEmail}</div>
+          </address>
           <button id="submit-btn" type="submit">문의 내용 보내기</button>
           <p className="formStatus" aria-live="polite">{status}</p>
         </form>
