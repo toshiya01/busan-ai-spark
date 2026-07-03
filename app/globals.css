@@ -531,6 +531,22 @@ a {
   box-shadow: 0 12px 25px rgba(18, 83, 216, 0.25);
 }
 
+.formHint, .formStatus {
+  margin: -4px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.formHint {
+  color: var(--muted);
+}
+
+.formStatus {
+  min-height: 21px;
+  color: var(--blue2);
+  font-weight: 600;
+}
+
 /* Responsive Breakpoints */
 @media(max-width: 1024px) {
   .cards {

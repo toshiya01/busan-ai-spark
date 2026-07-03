@@ -1,5 +1,6 @@
 'use client';
 
+import type {FormEvent} from 'react';
 import {useState} from 'react';
 
 const services = [
@@ -11,6 +12,7 @@ const services = [
 
 const regions = ['부산', '울산', '창원', '김해', '양산', '진주', '거제', '경남 전역'];
 const targets = ['공공기관', '지자체', '교육청', '대학·센터', '재단·협회', '청년·창업기관'];
+const inquiryEmail = 'starlab1999@gmail.com';
 const faqs = [
   ['부산 울산 경남 외 지역도 가능한가요?', '가능합니다. 다만 현장 운영 인력과 이동 동선을 기준으로 일정과 견적을 먼저 확인합니다.'],
   ['공공기관 결과보고서까지 맡길 수 있나요?', '가능합니다. 사진 정리, 만족도 취합, 참석자 통계, 운영 개선점까지 보고서 형태로 정리합니다.'],
@@ -49,6 +51,41 @@ const jsonLd = {
 
 export default function Page() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [org, setOrg] = useState('');
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [message, setMessage] = useState('');
+  const [status, setStatus] = useState('');
+
+  const handleInquirySubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const trimmedOrg = org.trim();
+    const trimmedName = name.trim();
+    const trimmedPhone = phone.trim();
+    const trimmedMessage = message.trim();
+
+    if (!trimmedOrg || !trimmedName || !trimmedPhone || !trimmedMessage) {
+      setStatus('기관명, 담당자, 연락처, 문의 내용을 모두 입력해 주세요.');
+      return;
+    }
+
+    const subject = `[스타랩 상담 문의] ${trimmedOrg}`;
+    const body = [
+      '스타랩 교육 행사 운영 상담 문의',
+      '',
+      `기관명: ${trimmedOrg}`,
+      `담당자: ${trimmedName}`,
+      `연락처: ${trimmedPhone}`,
+      '',
+      '문의 내용:',
+      trimmedMessage,
+    ].join('\n');
+
+    const mailtoUrl = `mailto:${inquiryEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.open(mailtoUrl, '_self');
+    setStatus('이메일 작성 화면이 열립니다. 받는 사람과 문의 내용을 확인한 뒤 전송해 주세요.');
+  };
 
   return (
     <main>
@@ -164,24 +201,54 @@ export default function Page() {
           <h2>공공기관 교육 행사 운영 상담</h2>
           <p>교육 행사 및 프로그램 운영과 관련하여 궁금하신 점을 남겨주시면 신속하고 상세하게 답변해 드리겠습니다.</p>
         </div>
-        <form className="form">
+        <form className="form" onSubmit={handleInquirySubmit}>
           <div className="formGroup">
             <label htmlFor="org">기관명</label>
-            <input id="org" name="org" placeholder="예: 부산 ○○센터" />
+            <input
+              id="org"
+              name="org"
+              placeholder="예: 부산 ○○센터"
+              value={org}
+              onChange={event => setOrg(event.target.value)}
+              required
+            />
           </div>
           <div className="formGroup">
             <label htmlFor="name">담당자</label>
-            <input id="name" name="name" placeholder="성함" />
+            <input
+              id="name"
+              name="name"
+              placeholder="성함"
+              value={name}
+              onChange={event => setName(event.target.value)}
+              required
+            />
           </div>
           <div className="formGroup">
             <label htmlFor="phone">연락처</label>
-            <input id="phone" name="phone" placeholder="010-0000-0000" />
+            <input
+              id="phone"
+              name="phone"
+              placeholder="010-0000-0000"
+              value={phone}
+              onChange={event => setPhone(event.target.value)}
+              required
+            />
           </div>
           <div className="formGroup">
             <label htmlFor="message">문의 내용</label>
-            <textarea id="message" name="message" placeholder="행사 일정, 예상 인원, 필요한 운영 범위를 적어주세요." />
+            <textarea
+              id="message"
+              name="message"
+              placeholder="행사 일정, 예상 인원, 필요한 운영 범위를 적어주세요."
+              value={message}
+              onChange={event => setMessage(event.target.value)}
+              required
+            />
           </div>
-          <button id="submit-btn" type="button">문의 내용 보내기</button>
+          <p className="formHint">받는 사람: {inquiryEmail}</p>
+          <button id="submit-btn" type="submit">문의 내용 보내기</button>
+          <p className="formStatus" aria-live="polite">{status}</p>
         </form>
       </section>
     </main>
